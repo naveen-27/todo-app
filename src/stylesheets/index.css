@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+div[data-theme="light"] {
+  --app-background: hsl(0, 0%, 98%);
+  --todo-background: hsl(0, 0%, 100%);
+  --check-gradient: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+}
+
+div[data-theme="dark"] {
+  --app-background: hsl(235, 21%, 11%);
+}
