@@ -23,3 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 style-guide.md
 /design
+debug.log
+.eslintcache
