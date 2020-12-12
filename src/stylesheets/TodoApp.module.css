@@ -1,0 +1,13 @@
+.App-container {
+  height: 100vh;
+  background-color: var(--app-background);
+  background-repeat: no-repeat;
+  background-size: 100% 45%;
+  padding: 2rem 1rem;
+  transition: background 500ms ease;
+}
+
+.Todo-wrapper {
+  width: min(500px, 95%);
+  margin: 4rem auto 0 auto;
+}
