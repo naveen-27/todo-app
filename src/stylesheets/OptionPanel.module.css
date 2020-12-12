@@ -1,0 +1,71 @@
+.Panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--typography);
+  padding: 1rem;
+  background-color: var(--todo-background);
+  border-top: 2px solid var(--border-color);
+  border-radius: 0 0 5px 5px;
+}
+
+.Panel > p {
+  font-size: 0.85rem;
+}
+
+.filter {
+  display: flex;
+}
+
+.option + .option {
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+.btn,
+.option {
+  color: var(--typography);
+  background-color: transparent;
+  outline: none;
+  border: none;
+  font-family: inherit;
+}
+
+.option {
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.option:hover {
+  color: var(--hover);
+}
+
+.btn:focus-visible,
+.option:focus-visible {
+  outline: 3px dotted var(--typography);
+}
+
+.active {
+  color: var(--active);
+}
+
+@media (max-width: 600px) {
+  .Panel {
+    position: relative;
+  }
+
+  .filter {
+    position: absolute;
+    top: 150%;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background: var(--todo-background);
+    justify-content: center;
+    border-radius: 5px;
+  }
+
+  .option + .option {
+    margin-left: 1rem;
+  }
+}
