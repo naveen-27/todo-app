@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 0;
 }
 
 .logo {
@@ -13,6 +12,17 @@
 
 .Header > svg {
   transform: scale(1.2);
+  cursor: pointer;
+}
+
+.toggle {
+  outline: none;
+  border: none;
+  background: transparent;
+}
+
+.toggle:focus-visible {
+  box-shadow: 0 0 0 1px var(--typography), 0 0 0 2px var(--app-background);
 }
 
 @media (max-width: 500px) {
