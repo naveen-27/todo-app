@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
 
+:root {
+  --check-gradient: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+  --border-color: hsl(234, 11%, 52%);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,11 +16,13 @@ body {
 }
 
 div[data-theme="light"] {
-  --app-background: hsl(0, 0%, 98%);
-  --todo-background: hsl(0, 0%, 100%);
-  --check-gradient: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+  --app-background: hsl(236, 33%, 92%);
+  --todo-background: hsl(0, 0%, 98%);
+  --typography: hsl(235, 19%, 35%);
 }
 
 div[data-theme="dark"] {
   --app-background: hsl(235, 21%, 11%);
+  --todo-background: hsl(235, 24%, 19%);
+  --typography: hsl(234, 39%, 85%);
 }
