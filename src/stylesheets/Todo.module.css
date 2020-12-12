@@ -1,0 +1,87 @@
+.Todo {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--todo-background);
+  font-size: 1rem;
+  animation: fadeIn 300ms ease;
+}
+
+.Todo + .Todo {
+  border-top: 2px solid var(--border-color);
+}
+
+.checkbox {
+  margin-right: 1rem;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  outline: none;
+}
+
+.check {
+  display: flex;
+  opacity: 0;
+  align-items: center;
+  justify-content: center;
+  background: var(--check-gradient);
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 50%;
+}
+
+.todo-content {
+  color: var(--typography);
+  cursor: pointer;
+}
+
+.delete {
+  opacity: 0;
+  margin-left: auto;
+  outline: none;
+}
+
+.check,
+.delete {
+  transition: opacity 300ms ease-in-out;
+}
+
+.checked {
+  opacity: 1;
+}
+
+.done {
+  text-decoration: line-through;
+  color: var(--muted-typography);
+}
+
+.Todo:hover .delete,
+.delete:focus {
+  opacity: 1;
+}
+
+.delete:focus,
+.checkbox:focus {
+  outline: 3px dotted var(--typography);
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(1, 0);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1, 0);
+  }
+}
+
+.deleting {
+  animation: fadeOut 300ms ease;
+}
