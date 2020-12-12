@@ -9,7 +9,9 @@ const Header = (props) => {
   return (
     <header className={classes.Header}>
       <h1 className={classes.logo}>TODO</h1>
-      <ThemeSwitchIcon onClick={props.themeToggleFn} />
+      <button className={classes.toggle} onClick={props.themeToggleFn}>
+        <ThemeSwitchIcon />
+      </button>
     </header>
   );
 };
