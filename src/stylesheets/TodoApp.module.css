@@ -2,12 +2,33 @@
   min-height: max(100vh, 600px);
   background-color: var(--app-background);
   background-repeat: no-repeat;
-  background-size: 100% max(300px, 45%);
-  padding: 2rem 1rem;
+  background-size: 100% 300px;
+  padding: 3rem;
   transition: background 500ms ease;
 }
 
 .Todo-wrapper {
   width: min(500px, 95%);
   margin: 1rem auto 0 auto;
+}
+
+.help {
+  margin-top: 2rem;
+  color: var(--typography);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.citation {
+  color: var(--typography);
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+}
+
+@media (max-width: 600px) {
+  .help {
+    margin-top: 6rem;
+  }
 }
