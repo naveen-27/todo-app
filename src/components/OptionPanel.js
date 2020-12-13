@@ -4,7 +4,9 @@ import classes from "../stylesheets/OptionPanel.module.css";
 const OptionPanel = (props) => {
   return (
     <div className={classes.Panel}>
-      <p>{props.remainingTodos} items left</p>
+      <p>
+        <span className={classes.no}>{props.remainingTodos}</span> items left
+      </p>
 
       <div className={classes.filter}>
         <button
