@@ -38,11 +38,11 @@
 .option {
   font-weight: 700;
   font-size: 0.8rem;
+  cursor: pointer;
 }
 
-.option:hover {
+.option:not(.active):hover {
   color: var(--hover);
-  cursor: pointer;
 }
 
 .btn:focus-visible,
