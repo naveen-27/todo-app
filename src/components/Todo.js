@@ -40,6 +40,9 @@ const Todo = (props) => {
         tabIndex="0"
         onClick={handleToggleClick}
         onKeyDown={handleToggleClick}
+        role="checkbox"
+        aria-checked={isDone}
+        aria-labelledby={todo}
       >
         <div className={`${classes.check} ${todoCheckedClassName}`}>
           <Check />
