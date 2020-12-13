@@ -19,7 +19,6 @@
 
 .option + .option {
   margin-left: 0.5rem;
-  cursor: pointer;
 }
 
 .btn,
@@ -38,6 +37,7 @@
 
 .option:hover {
   color: var(--hover);
+  cursor: pointer;
 }
 
 .btn:focus-visible,
