@@ -27,6 +27,12 @@
   margin-top: 3rem;
 }
 
+.App-container a {
+  color: var(--active);
+  text-decoration: 3px underline var(--typography) dotted;
+  font-weight: 700;
+}
+
 @media (max-width: 600px) {
   .help {
     margin-top: 6rem;
