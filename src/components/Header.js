@@ -9,7 +9,11 @@ const Header = (props) => {
   return (
     <header className={classes.Header}>
       <h1 className={classes.logo}>TODO</h1>
-      <button className={classes.toggle} onClick={props.themeToggleFn}>
+      <button
+        className={classes.toggle}
+        onClick={props.themeToggleFn}
+        aria-label="Switch theme"
+      >
         <ThemeSwitchIcon />
       </button>
     </header>
