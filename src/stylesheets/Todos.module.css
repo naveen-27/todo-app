@@ -1,5 +1,9 @@
 .Todos {
   margin-top: 2rem;
   border-radius: 0.35rem 0.35rem 0 0;
-  overflow: hidden;
+}
+
+.dragging {
+  transition: none;
+  z-index: 3;
 }
