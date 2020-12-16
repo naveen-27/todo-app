@@ -23,6 +23,7 @@ const TodoInput = (props) => {
         value={todo}
         placeholder="Create a new todo..."
         onChange={handleChange}
+        aria-label="todo inputbox"
       />
     </form>
   );
