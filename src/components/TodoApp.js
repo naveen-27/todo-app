@@ -81,7 +81,11 @@ const TodoApp = () => {
   };
 
   const reOrderTodos = (newOrder) => {
-    const newTodosOrder = newOrder.map((position) => todos[position]);
+    let newTodosOrder = new Array(todos.length);
+    newOrder.forEach((position, idx) => {
+      newTodosOrder[position] = todos[idx];
+    });
+
     setTodos(newTodosOrder);
     localStorage.setItem("todos", JSON.stringify(newTodosOrder));
   };
