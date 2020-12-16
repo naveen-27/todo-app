@@ -99,3 +99,9 @@
 .deleting {
   animation: fadeOut 300ms ease;
 }
+
+@media (max-width: 500px) {
+  .delete {
+    opacity: 1;
+  }
+}
