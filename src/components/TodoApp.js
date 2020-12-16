@@ -8,9 +8,42 @@ import Todos from "./Todos";
 import OptionPanel from "./OptionPanel";
 
 const TodoApp = () => {
+  const firstRenderTodos = [
+    {
+      id: uuid(),
+      todo: "Complete online JavaScript course",
+      isDone: true,
+    },
+    {
+      id: uuid(),
+      todo: "Jog around the park 3x",
+      isDone: false,
+    },
+    {
+      id: uuid(),
+      todo: "10 minutes meditation",
+      isDone: false,
+    },
+    {
+      id: uuid(),
+      todo: "Read for 1 hour",
+      isDone: false,
+    },
+    {
+      id: uuid(),
+      todo: "Pick up groceries",
+      isDone: false,
+    },
+    {
+      id: uuid(),
+      todo: "Complete Todo App on Frontend Mentor",
+      isDone: false,
+    },
+  ];
+
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   const [todos, setTodos] = useState(
-    JSON.parse(localStorage.getItem("todos")) || []
+    JSON.parse(localStorage.getItem("todos")) || firstRenderTodos
   );
   const [filter, setFilter] = useState("all");
 
