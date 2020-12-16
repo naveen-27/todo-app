@@ -80,6 +80,12 @@ const TodoApp = () => {
     }, 0);
   };
 
+  const reOrderTodos = (newOrder) => {
+    const newTodosOrder = newOrder.map((position) => todos[position]);
+    setTodos(newTodosOrder);
+    localStorage.setItem("todos", JSON.stringify(newTodosOrder));
+  };
+
   return (
     <div
       className={classes["App-container"]}
@@ -97,6 +103,7 @@ const TodoApp = () => {
           todos={filterTodo()}
           toggleDone={toggleDone}
           delete={deleteTodo}
+          reOrder={reOrderTodos}
         />
 
         <OptionPanel
@@ -106,7 +113,9 @@ const TodoApp = () => {
           filterApplied={filter}
         />
 
-        <p className={classes.help}>Drag and drop to reorder list.</p>
+        <p className={classes.help}>
+          Drag and drop to reorder list. One direction at a time
+        </p>
 
         <p className={classes.citation}>
           Challenge by{" "}

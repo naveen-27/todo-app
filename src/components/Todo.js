@@ -33,8 +33,18 @@ const Todo = (props) => {
     }
   };
 
+  const { handleMouseDown, handleMouseUp, handleMouseMove } = props.dragAndDrop;
+
   return (
-    <div className={classes.Todo} onAnimationEnd={deleteTodo}>
+    <div
+      className={classes.Todo}
+      data-position={props.index}
+      data-transform={0}
+      onAnimationEnd={deleteTodo}
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+      onMouseMove={handleMouseMove}
+    >
       <div
         className={classes.checkbox}
         tabIndex="0"
@@ -64,6 +74,8 @@ const Todo = (props) => {
         onClick={handleDelete}
         onKeyDown={handleDelete}
       />
+
+      <span className={classes.Drag}></span>
     </div>
   );
 };
