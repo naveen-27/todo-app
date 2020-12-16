@@ -3,7 +3,7 @@
   background-color: var(--app-background);
   background-repeat: no-repeat;
   background-size: 100% 300px;
-  padding: 3rem;
+  padding: 3rem 1rem;
   transition: background 500ms ease;
 }
 
