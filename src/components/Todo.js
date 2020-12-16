@@ -41,9 +41,12 @@ const Todo = (props) => {
       data-position={props.index}
       data-transform={0}
       onAnimationEnd={deleteTodo}
-      onMouseDown={handleMouseDown}
-      onMouseUp={handleMouseUp}
-      onMouseMove={handleMouseMove}
+      onMouseDown={!("ontouchstart" in window) ? handleMouseDown : undefined}
+      onMouseUp={!("ontouchstart" in window) ? handleMouseUp : undefined}
+      onMouseMove={!("ontouchstart" in window) ? handleMouseMove : undefined}
+      onTouchStart={"ontouchstart" in window ? handleMouseDown : undefined}
+      onTouchMove={"ontouchstart" in window ? handleMouseMove : undefined}
+      onTouchEnd={"ontouchstart" in window ? handleMouseUp : undefined}
     >
       <div
         className={classes.checkbox}

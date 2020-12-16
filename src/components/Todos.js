@@ -18,8 +18,8 @@ const Todos = (props) => {
       }%)`;
 
       setDragging(e.target.parentElement);
-      prevY.current = e.clientY;
-      movedY.current = e.clientY;
+      prevY.current = e.clientY || Math.floor(e.touches[0].clientY);
+      movedY.current = e.clientY || Math.floor(e.touches[0].clientY);
     }
   };
 
@@ -51,10 +51,12 @@ const Todos = (props) => {
       return;
     }
 
-    const dragDistance = e.clientY - prevY.current;
+    const y = e.clientY || e.touches[0].clientY;
+
+    const dragDistance = y - prevY.current;
     dragging.style.transform = `scale(1.05) translateY(${dragDistance}px)`;
 
-    const distanceDraggedAfterSwap = e.clientY - movedY.current;
+    const distanceDraggedAfterSwap = y - movedY.current;
 
     const canMakeNonFirstMove =
       moved.current > 0 && Math.abs(distanceDraggedAfterSwap) >= 50;
@@ -63,7 +65,7 @@ const Todos = (props) => {
     const canMakeMove = canMakeFirstMove || canMakeNonFirstMove;
 
     if (
-      prevY.current < e.clientY &&
+      prevY.current < y &&
       parseInt(dragging.dataset.position) !== props.todos.length - 1
     ) {
       if (canMakeMove) {
@@ -79,12 +81,9 @@ const Todos = (props) => {
         target.dataset.transform = parseInt(target.dataset.transform) - 1;
         dragging.dataset.transform = parseInt(dragging.dataset.transform) + 1;
         moved.current++;
-        movedY.current = e.clientY;
+        movedY.current = y;
       }
-    } else if (
-      prevY.current > e.clientY &&
-      parseInt(dragging.dataset.position) !== 0
-    ) {
+    } else if (prevY.current > y && parseInt(dragging.dataset.position) !== 0) {
       if (canMakeMove) {
         const target = document.querySelector(
           `div[data-position='${parseInt(dragging.dataset.position) - 1}']`
@@ -98,7 +97,7 @@ const Todos = (props) => {
         target.dataset.transform = parseInt(target.dataset.transform) + 1;
         dragging.dataset.transform = parseInt(dragging.dataset.transform) - 1;
         moved.current++;
-        movedY.current = e.clientY;
+        movedY.current = y;
       }
     }
   };
