@@ -33,6 +33,7 @@ const Todos = (props) => {
       setDragging("");
       prevY.current = 0;
       movedY.current = 0;
+      moved.current = 0;
 
       const newOrder = Array.from(
         document.querySelectorAll(`.${classes.Todos} > *`)
@@ -80,7 +81,7 @@ const Todos = (props) => {
         dragging.dataset.position = parseInt(dragging.dataset.position) + 1;
         target.dataset.transform = parseInt(target.dataset.transform) - 1;
         dragging.dataset.transform = parseInt(dragging.dataset.transform) + 1;
-        moved.current++;
+        moved.current = moved.current + 1;
         movedY.current = y;
       }
     } else if (prevY.current > y && parseInt(dragging.dataset.position) !== 0) {
@@ -96,7 +97,7 @@ const Todos = (props) => {
         dragging.dataset.position = parseInt(dragging.dataset.position) - 1;
         target.dataset.transform = parseInt(target.dataset.transform) + 1;
         dragging.dataset.transform = parseInt(dragging.dataset.transform) - 1;
-        moved.current++;
+        moved.current = moved.current + 1;
         movedY.current = y;
       }
     }
