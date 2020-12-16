@@ -1,14 +1,28 @@
 .Todo {
   display: flex;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1rem 4rem 1rem 2rem;
   background-color: var(--todo-background);
   font-size: 1rem;
   animation: fadeIn 300ms ease;
+  transition: transform 250ms ease-in;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
 }
 
-.Todo + .Todo {
-  border-top: 2px solid var(--border-color);
+.Drag {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  background-color: var(--muted-typography);
+  box-shadow: inset -5px 0 var(--typography);
+  border-radius: 5px 0 0 5px;
+  z-index: 1;
+  cursor: grabbing;
 }
 
 .checkbox {
