@@ -138,6 +138,7 @@ const TodoApp = () => {
 
         <Todos
           todos={filterTodo()}
+          filter={filter}
           toggleDone={toggleDone}
           delete={deleteTodo}
           reOrder={reOrderTodos}

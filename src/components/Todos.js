@@ -9,6 +9,10 @@ const Todos = (props) => {
   const moved = useRef(0);
 
   const handleMouseDown = (e) => {
+    if (props.filter !== "all") {
+      return;
+    }
+
     if (e.target.nodeName === "SPAN") {
       const target = e.target.parentElement;
 
