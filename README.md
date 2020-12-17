@@ -1,4 +1,4 @@
-# Photosnap - Frontendmentor.io
+# Todo App - Frontendmentor.io
 
 This [Todo-App](https://todo-app-sable.vercel.app/) is a solution to the Frontendmentor.io challenge.
 
