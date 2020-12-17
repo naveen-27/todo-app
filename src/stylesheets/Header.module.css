@@ -19,6 +19,7 @@
   outline: none;
   border: none;
   background: transparent;
+  cursor: pointer;
 }
 
 .toggle:focus-visible {
